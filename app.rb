@@ -25,19 +25,19 @@ post("/") do
   new_word = Word.new(word)
   new_word.save
   @words = Word.all
-  # if @words.has_key?(nil)
-  #   @words.delete(nil)
-  #   @words
-  # end
+  if @words.has_key?(nil)
+    @words.delete(nil)
+    @words
+  end
   erb(:home)
 end
 
-# post("/") do
-#   word = params['delete_word']
-#   @words.delete(word)
-#   @words = Word.all
-#   erb(:home)
-# end
+post("/") do
+  word = params['delete_word']
+  @words.delete(word)
+  @words = Word.all
+  erb(:home)
+end
 
 post("/") do
   @words = Word.all
