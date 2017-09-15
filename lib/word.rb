@@ -10,12 +10,9 @@ class Word
   def add_definition(definition)
     @definition.push(definition)
   end
-  # def to_s
-  #   "#{@word}: #{@definition}"
-  # end
 
-
-
-  def string_definitions(word)
+  def self.all
+    @@dictionary
   end
+
 end
