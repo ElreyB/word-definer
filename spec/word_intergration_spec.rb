@@ -13,4 +13,12 @@ describe('word', {:type => :feature}) do
     visit('/')
     expect(page).to have_content("apple play snow")
   end
+
+  it 'displays new word in list' do
+    visit('/')
+    fill_in('word', :with => "banana")
+    fill_in('definition', :with => "a fruit")
+    click_button('Add to List')
+    expect(page).to have_content("banana")
+  end
 end

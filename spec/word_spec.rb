@@ -2,7 +2,12 @@ require 'rspec'
 require 'word'
 
 describe 'Word' do
+  before do
+    Word.clear
+  end
+
   let(:new_word) { Word.new("transpire") }
+  
   describe '#initialize' do
     it 'has a readable word' do
       expect(new_word.word).to eq "transpire"

@@ -16,8 +16,17 @@ get('/') do
   start_word3 = Word.new("snow")
   start_word3.add_definition("water in a solid form")
   start_word3.save
-  
+
   @words = Word.all
-  binding.pry
+  erb(:home)
+end
+
+post("/") do
+  word = params['word']
+  definition = params['definition']
+  new_word = Word.new(word)
+  new_word.add_definition(definition)
+  new_word.save
+  @words = Word.all
   erb(:home)
 end
