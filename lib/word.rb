@@ -15,4 +15,8 @@ class Word
     @@dictionary
   end
 
+  def save
+    @@dictionary[self.word] = self.definition
+  end
+
 end

@@ -21,8 +21,17 @@ describe 'Word' do
 
   describe '.all' do
     it 'will display the dictionary' do
-      expect(Word.all).to be_a Hash
+      expect(Word.all).to eq({})
     end
+  end
+
+  describe 'save' do
+    it 'will save word to dictionary' do
+      new_word.save
+      expect(Word.all).to eq({"transpire" => []})
+    end
+
+
   end
 
 end
