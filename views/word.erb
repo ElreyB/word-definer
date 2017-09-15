@@ -1,11 +1,12 @@
 <h3><%= @word.word %></h3>
-<ol>
-  <% if @word.definition.empty? %>
+
+  <ol>
     <% @word.definition.each do |definition| %>
-      <li><%= definition %></li>
+      <% if definition != ""%>
+        <li><%= definition %></li>
       <% end %>
-  <% end %>
-</ol>
+    <% end %>
+  </ol>
 
 
 <a href="/">Home</a>
