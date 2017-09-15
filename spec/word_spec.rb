@@ -19,11 +19,11 @@ describe 'Word' do
   #   end
   # end
 
-  # describe '#add_definition' do
-  #   it 'will add a definition to a word' do
-  #     expect{ new_word.add_definition("to ")}
-  #   end
-  # end
+  describe '#add_definition' do
+    it 'will add a definition to a word' do
+      expect{ new_word.add_definition("to happen") }.to change{ new_word.definition }.from([]).to(["to happen"])
+    end
+  end
 
   # describe "#string_definitions" do
   #   it 'will display all the definitions of a word' do

@@ -7,7 +7,9 @@ class Word
     @definition = []
   end
 
-
+  def add_definition(definition)
+    @definition.push(definition)
+  end
   # def to_s
   #   "#{@word}: #{@definition}"
   # end
