@@ -5,18 +5,17 @@
       <li><a href="/word/<%= word %>"><%= word %></a></li>
     <% end %>
   </ul>
+  <a href="/all"><button class="btn">View all words and definition</button></a>
+  <a href="/alphabetize"><button class="btn">View all words and definition alphabetized</button></a>
 </div>
 
-<!-- # <% if @error != nil %>
-#   <div class="alert alert-danger">
-#     <p>Word is alreay in dictionary!</p>
-#   </div>
-# <% end %> -->
-
-<form action="/" method="post">
-  <div class="form-group">
-    <label for="word">Word:</label>
-    <input type="text" name="word">
-  </div>
-  <button type="submit" class="btn">Add to List</button>
-</form>
+<div class="well">
+  <h2>Add word to dictionary</h2>
+  <form action="/" method="post">
+    <div class="form-group">
+      <label for="word">Word:</label>
+      <input type="text" name="word">
+    </div>
+    <button type="submit" class="btn">Add to List</button>
+  </form>
+</div>

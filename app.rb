@@ -40,3 +40,13 @@ post('/word/:word') do
   @word.add_definition(definition)
   erb(:word)
 end
+
+get('/all') do
+  @words = Word.all
+  erb(:all)
+end
+
+get('/alphabetize') do
+  @words = Word.all.sort
+  erb(:all)
+end

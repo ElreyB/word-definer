@@ -35,3 +35,15 @@ describe('word', {:type => :feature}) do
     expect(page.find('//li')).to have_content("a fruit")
   end
 end
+
+describe('all', {:type => :feature}) do
+  it 'displays all the words and definitions' do
+    visit('/all')
+    expect(page).to have_content("apple, play snow flower")
+  end
+
+  # it 'displays all the words and definitions' do
+  #   visit('/all')
+  #   expect(page.find('//li')).to have_content("apple play snow flower")
+  # end
+end
