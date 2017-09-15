@@ -25,13 +25,18 @@ describe 'Word' do
     end
   end
 
-  describe 'save' do
+  describe '#save' do
     it 'will save word to dictionary' do
       new_word.save
       expect(Word.all).to eq({"transpire" => []})
     end
+  end
 
-
+  describe '.clear' do
+    it 'will clear the dictionary of words' do
+      new_word.save
+      expect{ Word.clear }.to change{ Word.all }.from({"transpire" => []}).to({})
+    end
   end
 
 end

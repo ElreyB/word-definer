@@ -19,4 +19,8 @@ class Word
     @@dictionary[self.word] = self.definition
   end
 
+  def self.clear
+    @@dictionary = {}
+  end
+
 end
