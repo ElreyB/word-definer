@@ -16,16 +16,33 @@ get('/') do
   start_word3 = Word.new("snow")
   start_word3.add_definition("water in a solid form")
   start_word3.save
-  @error = nil
   @words = Word.all
   erb(:home)
 end
 
 post("/") do
-  word = params['word']
+  word = params['add_word']
   new_word = Word.new(word)
-  @error = new_word.save
+  new_word.save
   @words = Word.all
+  # if @words.has_key?(nil)
+  #   @words.delete(nil)
+  #   @words
+  # end
+  erb(:home)
+end
+
+# post("/") do
+#   word = params['delete_word']
+#   @words.delete(word)
+#   @words = Word.all
+#   erb(:home)
+# end
+
+post("/") do
+  @words = Word.all
+  word = params['delete_word']
+  @words.delete(word)
   erb(:home)
 end
 

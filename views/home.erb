@@ -1,7 +1,9 @@
 <h2>Words currently in your dictionary:</h2>
 <ul>
   <% @words.each do |word, definition| %>
+  <% if word != "" %>
     <li><a href="/word/<%= word %>"><%= word %></a></li>
+  <% end %>
   <% end %>
 </ul>
 <a href="/all"><button class="btn">View all words and definition</button></a>
@@ -12,8 +14,14 @@
 <h2>Add word to dictionary</h2>
 <form action="/" method="post">
   <div class="form-group">
-    <label for="word">Word:</label>
-    <input type="text" name="word">
+    <input type="text" name="add_word">
   </div>
   <button type="submit" class="btn">Add to List</button>
+</form>
+<h2>Delete word to dictionary</h2>
+<form action="/" method="post">
+  <div class="form-group">
+    <input type="text" name="delete_word">
+  </div>
+  <button type="submit" class="btn">Delete from List</button>
 </form>

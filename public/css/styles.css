@@ -1,0 +1,27 @@
+body {
+  background-image: url(../images/dictionary.jpg);
+}
+
+/*body#alphabetize {
+  background-image: url(../images/alphabetical.jpg) !important;
+}*/
+
+body.all {
+  background-image: url(../images/words.jpg);
+}
+
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.well {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
