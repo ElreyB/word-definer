@@ -16,7 +16,7 @@ get('/') do
   start_word3 = Word.new("snow")
   start_word3.add_definition("water in a solid form")
   start_word3.save
-
+  @error = nil
   @words = Word.all
   erb(:home)
 end
@@ -31,7 +31,7 @@ post("/") do
   definition = params['definition']
   new_word = Word.new(word)
   new_word.add_definition(definition)
-  new_word.save
+  @error = new_word.save
   @words = Word.all
   erb(:home)
 end
