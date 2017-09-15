@@ -16,7 +16,7 @@ class Word
   end
 
   def save
-    @@dictionary[self.word] = self.definition
+    @@dictionary[self.word] = self
   end
 
   def self.clear
@@ -24,7 +24,7 @@ class Word
   end
 
   def self.find_definition(word)
-    @@dictionary[word]
+    @@dictionary[word].definition
   end
 
 end

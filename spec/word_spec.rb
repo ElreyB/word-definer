@@ -7,7 +7,7 @@ describe 'Word' do
   end
 
   let(:new_word) { Word.new("transpire") }
-  
+
   describe '#initialize' do
     it 'has a readable word' do
       expect(new_word.word).to eq "transpire"
@@ -33,14 +33,14 @@ describe 'Word' do
   describe '#save' do
     it 'will save word to dictionary' do
       new_word.save
-      expect(Word.all).to eq({"transpire" => []})
+      expect(Word.all).to eq({"transpire" => new_word})
     end
   end
 
   describe '.clear' do
     it 'will clear the dictionary of words' do
       new_word.save
-      expect{ Word.clear }.to change{ Word.all }.from({"transpire" => []}).to({})
+      expect{ Word.clear }.to change{ Word.all }.from({"transpire" => new_word}).to({})
     end
   end
 
@@ -48,6 +48,13 @@ describe 'Word' do
     it 'will find definition for the word give' do
       new_word.save
       expect(Word.find_definition(new_word.word)).to eq []
+    end
+  end
+
+  describe '.find' do
+    it 'will find instance of word by the word' do
+      new_word.save
+      expect(Word.find(new_word.word)).to eq({"transpire" => new_word})
     end
   end
 

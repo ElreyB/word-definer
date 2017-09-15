@@ -20,6 +20,11 @@ get('/') do
   @words = Word.all
   erb(:home)
 end
+# 
+# get(/word/:word) do
+#   w
+#   @words = Word.all
+# end
 
 post("/") do
   word = params['word']
