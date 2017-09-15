@@ -1,15 +1,14 @@
-<div class="well">
-  <h1>Your Dictionary</h1>
-  <ul>
-    <% @words.each do |word, define| %>
-      <li><h3><%= word %></h3></li>
-      <ol>
-        <% define.definition.each do |definition| %>
-          <% if definition != ""%>
-            <li><%= definition %></li>
-          <% end %>
+<a href="/"><button class="btn">Home</button></a>
+<h1>Your Dictionary</h1>
+<ul>
+  <% @words.each do |word, define| %>
+    <li><h3><%= word %></h3></li>
+    <ol>
+      <% define.definition.each do |definition| %>
+        <% if definition != ""%>
+          <li><%= definition %></li>
         <% end %>
-      </ol>
-    <% end %>
-  </ul>
-</div>
+      <% end %>
+    </ol>
+  <% end %>
+</ul>

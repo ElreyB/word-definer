@@ -1,20 +1,17 @@
-<div class="well">
-  <h3><%= @word.word %></h3>
-
-    <ol>
-      <% @word.definition.each do |definition| %>
-        <% if definition != ""%>
-          <li><%= definition %></li>
-        <% end %>
+<a href="/"><button class="btn">Home</button></a>
+<h3><%= @word.word %></h3>
+  <ol>
+    <% @word.definition.each do |definition| %>
+      <% if definition != ""%>
+        <li><%= definition %></li>
       <% end %>
-    </ol>
+    <% end %>
+  </ol>
 
-  <h2>Add a definition to word:</h2>
-  <form action="/word/<%= @word.word %>" method="post">
-    <div class="form-group">
-      <input type="text" name="definition">
-    </div>
-    <button type="submit" class="btn">Add Definition</button>
-    <a href="/"><button class="btn">Home</button></a>
-  </form>
-</div>
+<h2>Add a definition to word:</h2>
+<form action="/word/<%= @word.word %>" method="post">
+  <div class="form-group">
+    <input type="text" name="definition">
+  </div>
+  <button type="submit" class="btn">Add Definition</button>
+</form>

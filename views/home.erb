@@ -1,21 +1,19 @@
-<div class="well">
-  <h2>Words currently in your dictionary:</h2>
-  <ul>
-    <% @words.each do |word, definition| %>
-      <li><a href="/word/<%= word %>"><%= word %></a></li>
-    <% end %>
-  </ul>
-  <a href="/all"><button class="btn">View all words and definition</button></a>
-  <a href="/alphabetize"><button class="btn">View all words and definition alphabetized</button></a>
-</div>
+<h2>Words currently in your dictionary:</h2>
+<ul>
+  <% @words.each do |word, definition| %>
+    <li><a href="/word/<%= word %>"><%= word %></a></li>
+  <% end %>
+</ul>
+<a href="/all"><button class="btn">View all words and definition</button></a>
+<a href="/alphabetize"><button class="btn">View all words and definition alphabetized</button></a>
 
-<div class="well">
-  <h2>Add word to dictionary</h2>
-  <form action="/" method="post">
-    <div class="form-group">
-      <label for="word">Word:</label>
-      <input type="text" name="word">
-    </div>
-    <button type="submit" class="btn">Add to List</button>
-  </form>
-</div>
+
+
+<h2>Add word to dictionary</h2>
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="word">Word:</label>
+    <input type="text" name="word">
+  </div>
+  <button type="submit" class="btn">Add to List</button>
+</form>

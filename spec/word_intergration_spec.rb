@@ -4,7 +4,7 @@ require './app'
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-describe('word', {:type => :feature}) do
+describe('home', {:type => :feature}) do
   before do
     Word.clear
   end
@@ -37,13 +37,13 @@ describe('word', {:type => :feature}) do
 end
 
 describe('all', {:type => :feature}) do
-  it 'displays all the words and definitions' do
+  it 'displays word' do
     visit('/all')
-    expect(page).to have_content("apple, play snow flower")
+    expect(page).to have_content("apple")
   end
 
-  # it 'displays all the words and definitions' do
-  #   visit('/all')
-  #   expect(page.find('//li')).to have_content("apple play snow flower")
-  # end
+  it 'displays definitions' do
+    visit('/all')
+    expect(page).to have_content("a fruit")
+  end
 end

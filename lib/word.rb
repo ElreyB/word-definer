@@ -30,4 +30,8 @@ class Word
   def self.find(word)
     @@dictionary[word]
   end
+
+  def self.delete(word)
+    @@dictionary.delete(word)
+  end
 end

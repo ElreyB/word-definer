@@ -58,4 +58,11 @@ describe 'Word' do
     end
   end
 
+  describe '.delete' do
+    it 'will remove word from dictionary' do
+      new_word.save
+      Word.delete(new_word.word)
+      expect(Word.all).to eq({})
+    end
+  end
 end
