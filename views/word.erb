@@ -1,0 +1,7 @@
+<h3><%= @word.word %></h3>
+<ol>
+  <% @word.definition.each do |definition| %>
+    <li><%= definition %></li>
+    <% end %>
+</ol>
+<a href="/">Home</a>

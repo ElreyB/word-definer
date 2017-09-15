@@ -22,3 +22,15 @@ describe('word', {:type => :feature}) do
     expect(page).to have_content("banana")
   end
 end
+
+describe('word', {:type => :feature}) do
+  it 'displays word' do
+    visit('/word/banana')
+    expect(page.find('//h3')).to have_content("banana")
+  end
+
+  it "displays word's definition" do
+    visit('/word/banana')
+    expect(page.find('//li')).to have_content("a fruit")
+  end
+end
