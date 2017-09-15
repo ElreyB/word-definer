@@ -8,5 +8,12 @@
     <% end %>
   </ol>
 
+<h2>Add a definition to word:</h2>
+<form action="/word/<%= @word.word %>" method="post">
+  <div class="form-group">
+    <input type="text" name="definition">
+  </div>
+  <button type="submit" class="btn">Add Definition</button>
+</form>
 
 <a href="/">Home</a>

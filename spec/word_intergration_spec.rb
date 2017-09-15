@@ -17,7 +17,6 @@ describe('word', {:type => :feature}) do
   it 'displays new word in list' do
     visit('/')
     fill_in('word', :with => "banana")
-    fill_in('definition', :with => "a fruit")
     click_button('Add to List')
     expect(page).to have_content("banana")
   end
@@ -31,6 +30,8 @@ describe('word', {:type => :feature}) do
 
   it "displays word's definition" do
     visit('/word/banana')
+    fill_in('definition', :with => "a fruit")
+    click_button('Add Definition')
     expect(page.find('//li')).to have_content("a fruit")
   end
 end

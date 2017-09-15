@@ -21,17 +21,22 @@ get('/') do
   erb(:home)
 end
 
+post("/") do
+  word = params['word']
+  new_word = Word.new(word)
+  @error = new_word.save
+  @words = Word.all
+  erb(:home)
+end
+
 get('/word/:word') do
   @word = Word.find(params[:word])
   erb(:word)
 end
 
-post("/") do
-  word = params['word']
+post('/word/:word') do
+  @word = Word.find(params[:word])
   definition = params['definition']
-  new_word = Word.new(word)
-  new_word.add_definition(definition)
-  @error = new_word.save
-  @words = Word.all
-  erb(:home)
+  @word.add_definition(definition)
+  erb(:word)
 end
