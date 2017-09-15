@@ -39,4 +39,11 @@ describe 'Word' do
     end
   end
 
+  describe '.find_definition' do
+    it 'will find definition for the word give' do
+      new_word.save
+      expect(Word.find_definition(new_word.word)).to eq []
+    end
+  end
+
 end

@@ -23,4 +23,8 @@ class Word
     @@dictionary = {}
   end
 
+  def self.find_definition(word)
+    @@dictionary[word]
+  end
+
 end
