@@ -9,7 +9,7 @@
 _This program will allow to add words to a dictionary_
 
 ## Setup/Installation Requirements
-_You can view this app online [here](). To set up on your own machine, follow the steps below:_
+_You can view this app online [here](https://glacial-meadow-45856.herokuapp.com/). To set up on your own machine, follow the steps below:_
 
 * _Clone this repository_
 * _In your terminal type "git clone (repository url)_
