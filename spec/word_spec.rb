@@ -54,7 +54,7 @@ describe 'Word' do
   describe '.find' do
     it 'will find instance of word by the word' do
       new_word.save
-      expect(Word.find(new_word.word)).to eq({"transpire" => new_word})
+      expect(Word.find(new_word.word)).to eq new_word
     end
   end
 

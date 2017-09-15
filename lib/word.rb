@@ -27,4 +27,7 @@ class Word
     @@dictionary[word].definition
   end
 
+  def self.find(word)
+    @@dictionary[word]
+  end
 end
