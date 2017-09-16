@@ -7,18 +7,22 @@
 <a href="/all"><button class="btn">View all words and definition</button></a>
 <a href="/alphabetize"><button class="btn">View all words and definition alphabetized</button></a>
 
+<br>
+<div class="hide error">
+  <h3>Input Error</h3>
+</div>
 
 <h2>Add word to dictionary</h2>
 <form action="/" method="post">
   <div class="form-group">
-    <input type="text" name="add_word">
+    <input id="add_word" type="text" name="add_word" class="form-control">
   </div>
-  <button type="submit" class="btn">Add to List</button>
+  <button type="submit" class="btn add">Add to List</button>
 </form>
 <h2>Delete word to dictionary</h2>
 <form action="/delete" method="post">
   <div class="form-group">
-    <input type="text" name="delete_word">
+    <input id="delete_word" type="text" name="delete_word" class="form-control">
   </div>
-  <button type="submit" class="btn">Delete from List</button>
+  <button type="submit" class="btn delete">Delete from List</button>
 </form>
