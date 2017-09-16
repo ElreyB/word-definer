@@ -58,6 +58,9 @@ describe('all', {:type => :feature}) do
   end
 
   it 'displays definitions' do
+    visit('/')
+    fill_in('add_word', :with => "banana")
+    click_button('Add to List')
     visit('/all')
     expect(page).to have_content("a fruit")
   end

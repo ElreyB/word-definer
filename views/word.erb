@@ -10,10 +10,14 @@
     </ol>
 
   <h2>Add a definition to word:</h2>
+  <div class="hide error">
+    <h3>Input Error</h3>
+  </div>
+  <br>
   <form action="/word/<%= @word.word %>" method="post">
     <div class="form-group">
-      <input type="text" name="definition">
+      <input type="text" name="definition" class="form-control">
     </div>
-    <button type="submit" class="btn">Add Definition</button>
+    <button type="submit" class="btn define">Add Definition</button>
   </form>
 </body>

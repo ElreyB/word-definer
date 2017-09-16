@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("button.add, button.delete").click(function(e){
+  $("button.add, button.delete, button.define").click(function(e){
     formGroup = $(this).siblings(".form-group")
     var userInput = formGroup.find("input").val();
 
