@@ -1,10 +1,11 @@
 class Word
   @@dictionary = {}
-  attr_reader :word, :definition
+  attr_reader :word, :definition, :photo
 
   def initialize(word)
     @word = word.downcase
     @definition = []
+    @photo = ""
   end
 
   def add_definition(definition)

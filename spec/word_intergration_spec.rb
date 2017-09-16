@@ -46,6 +46,13 @@ describe('word', {:type => :feature}) do
     click_button('Add Definition')
     expect(page.find('//li')).to have_content("a fruit")
   end
+
+  it "displays error message" do
+    visit('/word/banana')
+    fill_in('definition', :with => "")
+    click_button('Add Definition')
+    expect(page.find('//li')).to have_content("a fruit")
+  end
 end
 
 describe('all', {:type => :feature}) do

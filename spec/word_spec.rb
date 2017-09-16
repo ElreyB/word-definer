@@ -17,6 +17,10 @@ describe 'Word' do
     it 'has a readable empty definition list for given word' do
       expect(new_word.definition).to eq []
     end
+
+    it 'has a readable empty string for photo' do
+      expect(new_word.photo).to eq ""
+    end
   end
 
   describe '#add_definition' do
