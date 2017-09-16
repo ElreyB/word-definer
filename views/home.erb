@@ -1,9 +1,12 @@
 <h2>Words currently in your dictionary:</h2>
-<ul>
-  <% @words.each do |word, definition| %>
-    <li><a href="/word/<%= word %>"><%= word %></a></li>
-  <% end %>
-</ul>
+<div class="list_container">
+  <ul>
+    <% @words.each do |word, definition| %>
+      <li><a href="/word/<%= word %>"><%= word %></a></li>
+    <% end %>
+  </ul>
+</div>
+<br>
 <a href="/all"><button class="btn">View all words and definition</button></a>
 <a href="/alphabetize"><button class="btn">View all words and definition alphabetized</button></a>
 

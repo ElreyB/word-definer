@@ -22,10 +22,8 @@ end
 
 post("/") do
   word = params['add_word']
-  if !word.empty?
-    new_word = Word.new(word)
-    new_word.save
-  end
+  new_word = Word.new(word)
+  new_word.save
   # binding.pry
   @words = Word.all
   erb(:home)

@@ -42,3 +42,14 @@ body, body.alphabetize, body.all {
 a {
   color: white;
 }
+
+.list_container {
+  max-height: 100px;
+  max-width: 148px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
