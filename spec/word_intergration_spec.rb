@@ -51,7 +51,7 @@ describe('word', {:type => :feature}) do
     visit('/word/banana')
     fill_in('definition', :with => "")
     click_button('Add Definition')
-    expect(page.find('//li')).to have_content("a fruit")
+    expect(page.find('//h4')).to have_content("Input Error")
   end
 end
 
