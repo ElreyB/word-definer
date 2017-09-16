@@ -22,13 +22,12 @@ end
 
 post("/") do
   word = params['add_word']
-  new_word = Word.new(word)
-  new_word.save
-  @words = Word.all
-  if @words.has_key?(nil)
-    @words.delete(nil)
-    @words
+  if !word.empty?
+    new_word = Word.new(word)
+    new_word.save
   end
+  # binding.pry
+  @words = Word.all
   erb(:home)
 end
 

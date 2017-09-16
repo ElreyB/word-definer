@@ -3,7 +3,7 @@ class Word
   attr_reader :word, :definition
 
   def initialize(word)
-    @word = word
+    @word = word.downcase
     @definition = []
   end
 
