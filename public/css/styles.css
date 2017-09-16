@@ -10,6 +10,12 @@ body.all {
   background-image: url(../images/words.jpg);
 }
 
+body, body.alphabetize, body.all {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
 .container {
   position: absolute;
@@ -24,4 +30,8 @@ body.all {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.home {
+  background-color: #45959c
 }
