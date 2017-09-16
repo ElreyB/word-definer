@@ -21,7 +21,7 @@ get('/') do
 end
 
 post("/") do
-  word = params['add_word']
+  word = params['add_word'] 
   new_word = Word.new(word)
   new_word.save
   @words = Word.all
@@ -65,5 +65,5 @@ end
 
 get('/alphabetize') do
   @words = Word.all.sort
-  erb(:all)
+  erb(:alphabetize)
 end

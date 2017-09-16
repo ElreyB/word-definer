@@ -2,9 +2,9 @@ body {
   background-image: url(../images/dictionary.jpg);
 }
 
-/*body#alphabetize {
-  background-image: url(../images/alphabetical.jpg) !important;
-}*/
+body.alphabetize {
+  background-image: url(../images/alphabetical.jpg);
+}
 
 body.all {
   background-image: url(../images/words.jpg);
