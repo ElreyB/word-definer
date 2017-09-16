@@ -5,7 +5,7 @@ Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
 describe('home', {:type => :feature}) do
-  before do
+  before() do
     Word.clear
   end
 
@@ -16,14 +16,26 @@ describe('home', {:type => :feature}) do
 
   it 'displays new word in list' do
     visit('/')
-    fill_in('word', :with => "banana")
+    fill_in('add_word', :with => "banana")
     click_button('Add to List')
     expect(page).to have_content("banana")
+  end
+
+  it 'removes word in list' do
+    visit('/')
+    fill_in('add_word', :with => "banana")
+    click_button('Add to List')
+    fill_in('delete_word', :with => "banana")
+    click_button('Delete from List')
+    expect(page).to have_no_content("banana")
   end
 end
 
 describe('word', {:type => :feature}) do
   it 'displays word' do
+    visit('/')
+    fill_in('add_word', :with => "banana")
+    click_button('Add to List')
     visit('/word/banana')
     expect(page.find('//h3')).to have_content("banana")
   end
@@ -38,8 +50,11 @@ end
 
 describe('all', {:type => :feature}) do
   it 'displays word' do
+    visit('/')
+    fill_in('add_word', :with => "banana")
+    click_button('Add to List')
     visit('/all')
-    expect(page).to have_content("apple")
+    expect(page).to have_content("banana")
   end
 
   it 'displays definitions' do

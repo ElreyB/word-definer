@@ -34,7 +34,6 @@ end
 
 post("/delete") do
   word = params['delete_word']
-  binding.pry
   @words = Word.all
   @words.delete(word)
   erb(:home)
