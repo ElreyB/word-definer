@@ -32,8 +32,16 @@ describe 'Word' do
 
   describe '#save' do
     it 'will save word to dictionary' do
-      new_word.save
-      expect(Word.all).to eq({"transpire" => new_word})
+      expect{ new_word.save }.to change{ Word.all }.from({}).to({"transpire" => new_word})
+    end
+
+    it 'will return true when word is saved' do
+      expect(new_word.save).to eq true
+    end
+
+    it 'will return false when word is not saved' do
+      not_a_word = Word.new("934njd00-2")
+      expect(not_a_word.save).to eq false
     end
   end
 

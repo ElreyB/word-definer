@@ -16,7 +16,12 @@ class Word
   end
 
   def save
-    @@dictionary[self.word] = self
+    if self.class == Word && self.word =~ /^[a-z]*$/i
+      @@dictionary[self.word] = self
+      return true
+    else
+      return false
+    end
   end
 
   def self.clear
