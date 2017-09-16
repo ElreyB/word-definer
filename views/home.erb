@@ -1,14 +1,11 @@
 <h2>Words currently in your dictionary:</h2>
 <ul>
   <% @words.each do |word, definition| %>
-  <% if word != "" %>
     <li><a href="/word/<%= word %>"><%= word %></a></li>
-  <% end %>
   <% end %>
 </ul>
 <a href="/all"><button class="btn">View all words and definition</button></a>
 <a href="/alphabetize"><button class="btn">View all words and definition alphabetized</button></a>
-
 
 
 <h2>Add word to dictionary</h2>

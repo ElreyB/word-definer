@@ -8,7 +8,13 @@ class Word
   end
 
   def add_definition(definition)
-    @definition.push(definition)
+    if definition =~ /^[a-z\s]*$/i
+      @definition.push(definition)
+      return true
+    else
+      return false
+    end
+
   end
 
   def self.all

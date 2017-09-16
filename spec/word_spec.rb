@@ -1,5 +1,6 @@
 require 'rspec'
 require 'word'
+require 'pry'
 
 describe 'Word' do
   before do
@@ -21,6 +22,11 @@ describe 'Word' do
   describe '#add_definition' do
     it 'will add a definition to a word' do
       expect{ new_word.add_definition("to happen") }.to change{ new_word.definition }.from([]).to(["to happen"])
+    end
+
+    it 'will return false when word is not saved' do
+      not_a_word = Word.new("Elrey")
+      expect(not_a_word.add_definition("9383 3938 383")).to eq false
     end
   end
 
