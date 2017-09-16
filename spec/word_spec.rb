@@ -83,4 +83,18 @@ describe 'Word' do
       expect(Word.all).to eq({})
     end
   end
+
+  describe '#add_photo' do
+    it 'will add photo jpg name to .photo' do
+      expect{ new_word.add_photo("transpire.jpg") }.to change{ new_word.photo }.from("").to("transpire.jpg")
+    end
+
+    it 'will return true when photo name is added' do
+      expect(new_word.add_photo("transpire.jpg")).to eq true
+    end
+
+    it 'will return false when photo name is not added' do
+      expect(new_word.add_photo("transpire.png")).to eq false
+    end
+  end
 end

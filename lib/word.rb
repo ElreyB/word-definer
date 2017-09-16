@@ -46,4 +46,13 @@ class Word
   def self.delete(word)
     @@dictionary.delete(word)
   end
+
+  def add_photo(photo_name)
+    if photo_name =~ /^[a-z0-9\W][^\s]*.jpg/i
+      @photo += photo_name
+      return true
+    else
+      return false
+    end
+  end
 end
