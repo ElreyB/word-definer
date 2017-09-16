@@ -21,7 +21,7 @@ get('/') do
 end
 
 post("/") do
-  word = params['add_word'] 
+  word = params['add_word']
   new_word = Word.new(word)
   new_word.save
   @words = Word.all
@@ -32,16 +32,10 @@ post("/") do
   erb(:home)
 end
 
-post("/") do
+post("/delete") do
   word = params['delete_word']
-  @words.delete(word)
+  binding.pry
   @words = Word.all
-  erb(:home)
-end
-
-post("/") do
-  @words = Word.all
-  word = params['delete_word']
   @words.delete(word)
   erb(:home)
 end
