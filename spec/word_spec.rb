@@ -97,4 +97,11 @@ describe 'Word' do
       expect(new_word.add_photo("transpire.png")).to eq false
     end
   end
+
+  describe '#delete_photo' do
+    it 'will delete photo name' do
+      new_word.add_photo("https://vignette4.wikia.nocookie.net/phobia/images/a/aa/Snow.jpg")
+      expect{ new_word.delete_photo }.to change{ new_word.photo }.from("https://vignette4.wikia.nocookie.net/phobia/images/a/aa/Snow.jpg").to("")
+    end
+  end
 end

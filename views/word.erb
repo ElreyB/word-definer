@@ -3,8 +3,11 @@
     body {background-image: url("<%= @word.photo %>");}
   </style>
 <% end %>
-<body class="word">
+<body>
   <a href="/"><button class="btn">Home</button></a>
+  <form class="" action="/photo/delete/<%= @word.word %>" method="post">
+    <button type="submit" class="btn">Remove Photo</button>
+  </form>
   <h3><%= @word.word %></h3>
     <ol>
       <% @word.definition.each do |definition| %>

@@ -55,4 +55,8 @@ class Word
       return false
     end
   end
+
+  def delete_photo
+    @photo = ""
+  end
 end

@@ -4,19 +4,19 @@ also_reload 'lib/**/*.rb'
 require './lib/word'
 require 'pry'
 
-start_word1 = Word.new("apple")
-start_word1.add_definition("a fruit")
-start_word1.save
-
-start_word2 = Word.new("play")
-start_word2.add_definition("to enjoy one time with an activity")
-start_word2.save
-
-start_word3 = Word.new("snow")
-start_word3.add_definition("water in a solid form")
-start_word3.save
 
 get('/') do
+  start_word1 = Word.new("apple")
+  start_word1.add_definition("a fruit")
+  start_word1.save
+
+  start_word2 = Word.new("play")
+  start_word2.add_definition("to enjoy one time with an activity")
+  start_word2.save
+
+  start_word3 = Word.new("snow")
+  start_word3.add_definition("water in a solid form")
+  start_word3.save
   @words = Word.all
   erb(:home)
 end
@@ -40,6 +40,12 @@ end
 
 get('/word/:word') do
   @word = Word.find(params[:word])
+  erb(:word)
+end
+
+post('/photo/delete/:word') do
+  @word = Word.find(params[:word])
+  @word.delete_photo
   erb(:word)
 end
 
