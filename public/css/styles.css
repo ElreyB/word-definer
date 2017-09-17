@@ -27,7 +27,7 @@ body {
 }
 
 .well {
-  background-color: rgba(0,0,0,.5);
+  background-color: #0e0e0e;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -69,4 +69,10 @@ a {
 
 .page-header {
   margin-top: 17px;
+}
+
+.instructions-container {
+  max-height: 400px;
+  max-width: 500px;
+  overflow: auto;
 }
