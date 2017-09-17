@@ -41,7 +41,7 @@ body {
 }
 
 .well {
-  background-color: #0e0e0e;
+  background-color: rgba(14, 14, 14, 0.88);
 }
 
 .main_container {

@@ -41,6 +41,9 @@ post('/search') do
   if Word.all.has_key?(search_word)
     @word = Word.find(search_word)
     erb(:word)
+  else
+    @words = Word.all
+    erb(:home)
   end
 end
 
