@@ -69,7 +69,7 @@ a {
 .list_container {
   max-height: 100px;
   max-width: 178px;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 ::-webkit-scrollbar {
@@ -88,6 +88,9 @@ a {
 .instructions-container {
   max-height: 400px;
   max-width: 500px;
+}
+
+.list_container, .instructions-container {
   overflow: auto;
   font-size: 20px;
 }
