@@ -17,15 +17,23 @@
 
 <h2>Add word to dictionary</h2>
 <form action="/" method="post">
-  <div class="form-group">
-    <input type="text" name="add_word" class="form-control">
+  <div class="row">
+    <div class="form-group col-xs-7">
+      <input type="text" name="add_word" class="form-control">
+    </div>
+    <div class="col-xs-5">
+      <button type="submit" class="btn add">Add to List</button>
+    </div>
   </div>
-  <button type="submit" class="btn add">Add to List</button>
 </form>
 <h2>Delete word to dictionary</h2>
 <form action="/delete" method="post">
-  <div class="form-group">
-    <input type="text" name="delete_word" class="form-control">
+  <div class="row">
+    <div class="form-group col-xs-7">
+      <input type="text" name="delete_word" class="form-control">
+    </div>
+    <div class="col-xs-5">
+      <button type="submit" class="btn delete">Delete from List</button>
+    </div>
   </div>
-  <button type="submit" class="btn delete">Delete from List</button>
 </form>
