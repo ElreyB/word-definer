@@ -4,16 +4,8 @@
   </style>
 <% end %>
 <body>
-  <div class="row">
-    <div class="col-xs-5 col-offset-1">
-      <a href="/"><button class="btn">Home</button></a>
-    </div>
-    <div class="col-xs-6">
-      <form class="" action="/photo/delete/<%= @word.word %>" method="post">
-        <button type="submit" class="btn">Remove Photo</button>
-      </form>
-    </div>
-  </div>
+  <a href="/instructions"><button class="btn instruction-home btn-block">Instruction</button></a>
+  <br>
 
   <h2><%= @word.word %></h2>
     <ol>
@@ -35,7 +27,7 @@
         <input type="text" name="definition" class="form-control" placeholder="Add Definition">
       </div>
       <div class="col-xs-5">
-        <button type="submit" class="btn define">Add</button>
+        <button type="submit" class="btn define">✏️</button>
       </div>
     </div>
     <div class="row">
@@ -43,8 +35,18 @@
         <input type="text" name="photo" class="form-control" placeholder="Add Photo">
       </div>
       <div class="col-xs-5">
-        <button type="submit" class="btn photo">Add</button>
+        <button type="submit" class="btn photo">📷</button>
       </div>
     </div>
   </form>
+  <div class="row">
+    <div class="col-xs-5 col-offset-1">
+      <a href="/"><button class="btn">Home</button></a>
+    </div>
+    <div class="col-xs-6">
+      <form class="" action="/photo/delete/<%= @word.word %>" method="post">
+        <button type="submit" class="btn">Remove Photo</button>
+      </form>
+    </div>
+  </div>
 </body>

@@ -9,14 +9,7 @@ get('/') do
   start_word1 = Word.new("apple")
   start_word1.add_definition("a fruit")
   start_word1.save
-
-  start_word2 = Word.new("play")
-  start_word2.add_definition("to enjoy one time with an activity")
-  start_word2.save
-
-  start_word3 = Word.new("snow")
-  start_word3.add_definition("water in a solid form")
-  start_word3.save
+  
   @words = Word.all
   erb(:home)
 end
