@@ -7,7 +7,7 @@
   <a href="/instructions"><button class="btn instruction-home btn-block">Instruction</button></a>
   <br>
 
-  <h2><%= @word.word %></h2>
+  <h2 class="word-header"><%= @word.word %></h2>
     <ol>
       <% @word.definition.each do |definition| %>
         <% if definition != ""%>

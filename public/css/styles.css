@@ -54,12 +54,16 @@ h4 {
   font-size: 27px;
 }
 
-.scroll {
+.scroll, .word-header, .current_header{
   text-align: center;
 }
 
-.scroll p {
+.scroll p, {
   font-size: 16px;
+}
+
+.word-header{
+  font-size: 60px
 }
 
 a {
@@ -69,6 +73,7 @@ a {
 .list_container {
   max-height: 100px;
   max-width: 178px;
+  margin: auto;
   /*overflow: auto;*/
 }
 

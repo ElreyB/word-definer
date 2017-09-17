@@ -1,27 +1,15 @@
 
 <a href="/instructions"><button class="btn instruction-home btn-block">Instruction</button></a>
 
-<h3>Words currently in your dictionary:</h3>
-<div class="row">
-  <div class="list_container col-xs-4 col-offset-3">
-    <ul>
-      <% @words.each do |word, definition| %>
-        <li><a href="/word/<%= word %>"><%= word %></a></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="scroll col-xs-5">
-    <p><<<<<==== <br>Scroll list as words in dictionary grow</p>
-  </div>
+<h3 class="current_header">Words currently in your dictionary</h3>
+<div class="list_container">
+  <ul>
+    <% @words.each do |word, definition| %>
+      <li><a href="/word/<%= word %>"><%= word %></a></li>
+    <% end %>
+  </ul>
 </div>
-<div class="row">
-  <div class="col-xs-7">
-    <a href="/all"><button class="btn">Words and Definitions</button></a>
-  </div>
-  <div class="col-xs-5">
-    <a href="/alphabetize"><button class="btn">Alphabetize</button></a>
-  </div>
-</div>
+
 <br>
 <div class="hide error">
   <h4>Input Error</h4>
@@ -47,3 +35,14 @@
     </div>
   </div>
 </form>
+<div class="row">
+  <div class="col-xs-5">
+    <a href="/all"><button class="btn">Words and Definitions</button></a>
+  </div>
+  <div class="col-xs-4">
+    <button class="btn search">Search Dictionary</button>
+  </div>
+  <div class="col-xs-3">
+    <a href="/alphabetize"><button class="btn">Alphabetize</button></a>
+  </div>
+</div>
