@@ -1,24 +1,24 @@
 # _Word Definer_
 
-#### _Word Definer: Epicodus solo exercise, 09.15.2017_
+#### _Word Definer - A dictionary for Kids: Epicodus solo exercise, 09.17.2017_
 
 #### By _**Elrey Belmonti**_
 
 ## Description
 
-_This program will allow to add words to a dictionary_
+_The concept for the app is to make learning fun: children will write up a list of words they don't know (but would like to learn) and then come up with their own definitions_
 
 ## Setup/Installation Requirements
 _You can view this app online [here](https://glacial-meadow-45856.herokuapp.com/). To set up on your own machine, follow the steps below:_
 
 * _Clone this repository_
 * _In your terminal type "git clone (repository url)_
-* _Once in the folder run "bundle install" to make sure you have all you need to run program_
-* _Run heroku open_
+* _Once in the folder run "bundle install"_
+* _To deploy the site go to [Heroku](https://www.heroku.com/home) website and follow the steps to deploy app_
 
 ## Known Bugs 🐛🐛🐛
 
-* _Page with word and definition doesn't now have the styles from stylesheet_
+* _No Known Bugs_
 
 ## Support and contact details
 
@@ -32,6 +32,7 @@ _Feel free to contact me at elbelmonti@gmail.com_
 * _Heroku_
 * _Pry_
 * _Capybara_
+* _JavaScript_
 
 ## Contributors
 
