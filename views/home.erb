@@ -1,4 +1,6 @@
-<h2>Words currently in your dictionary:</h2>
+
+<button class="btn instruction-home btn-block">Instruction</button>
+<h3>Words currently in your dictionary:</h3>
 <div class="row">
   <div class="list_container col-xs-4 col-offset-3">
     <ul>
@@ -7,38 +9,40 @@
       <% end %>
     </ul>
   </div>
-  <div class=" scroll col-xs-5">
-    <h5> <<<<<==== <br>Scroll list to see all words</h5>
+  <div class="scroll col-xs-5">
+    <p><<<<<==== <br>Scroll list as words in dictionary grow</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-7">
+    <a href="/all"><button class="btn">Words and Definitions</button></a>
+  </div>
+  <div class="col-xs-5">
+    <a href="/alphabetize"><button class="btn">Alphabetize</button></a>
   </div>
 </div>
 <br>
-<a href="/all"><button class="btn">View all words and definition</button></a>
-<a href="/alphabetize"><button class="btn">View all words and definition alphabetized</button></a>
-
-<br><br>
 <div class="hide error">
   <h4>Input Error</h4>
 </div>
 
-<h2>Add word to dictionary</h2>
 <form action="/" method="post">
   <div class="row">
     <div class="form-group col-xs-7">
-      <input type="text" name="add_word" class="form-control">
+      <input type="text" name="add_word" class="form-control" placeholder="Add word to dictionary">
     </div>
     <div class="col-xs-5">
-      <button type="submit" class="btn add">Add to List</button>
+      <button type="submit" class="btn add">Add</button>
     </div>
   </div>
 </form>
-<h2>Delete word to dictionary</h2>
 <form action="/delete" method="post">
   <div class="row">
     <div class="form-group col-xs-7">
-      <input type="text" name="delete_word" class="form-control">
+      <input type="text" name="delete_word" class="form-control" placeholder="Delete word from dictionary">
     </div>
     <div class="col-xs-5">
-      <button type="submit" class="btn delete">Delete from List</button>
+      <button type="submit" class="btn delete">Delete</button>
     </div>
   </div>
 </form>

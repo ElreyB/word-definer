@@ -44,8 +44,8 @@ h4 {
   text-align: center;
 }
 
-.scroll h5 {
-  font-size: 27px;
+.scroll p {
+  font-size: 16px;
 }
 
 a {
@@ -61,4 +61,12 @@ a {
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
+}
+
+.instruction-home {
+  font-size: 20px;
+}
+
+.page-header {
+  margin-top: 17px;
 }

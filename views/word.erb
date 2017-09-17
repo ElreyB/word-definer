@@ -4,11 +4,21 @@
   </style>
 <% end %>
 <body>
-  <a href="/"><button class="btn">Home</button></a>
-  <form class="" action="/photo/delete/<%= @word.word %>" method="post">
-    <button type="submit" class="btn">Remove Photo</button>
-  </form>
-  <h3><%= @word.word %></h3>
+  <div class="row">
+    <div class="col-xs-3 col-offset-1">
+      <a href="/"><button class="btn">Home</button></a>
+    </div>
+    <div class="col-xs-4">
+      <button class="btn instruction-word">Instruction</button>
+    </div>
+    <div class="col-xs-4">
+      <form class="" action="/photo/delete/<%= @word.word %>" method="post">
+        <button type="submit" class="btn">Remove Photo</button>
+      </form>
+    </div>
+  </div>
+
+  <h2><%= @word.word %></h2>
     <ol>
       <% @word.definition.each do |definition| %>
         <% if definition != ""%>
@@ -17,7 +27,7 @@
       <% end %>
     </ol>
 
-  <h2>Add a definition to word:</h2>
+  <h3>Add a definition to word:</h3>
   <div class="hide error">
     <h4>Input Error</h4>
   </div>
@@ -25,18 +35,18 @@
   <form action="/word/<%= @word.word %>" method="post">
     <div class="row">
       <div class="form-group col-xs-7">
-        <input type="text" name="definition" class="form-control">
+        <input type="text" name="definition" class="form-control" placeholder="Add Definition">
       </div>
       <div class="col-xs-5">
-        <button type="submit" class="btn define">Add Definition</button>
+        <button type="submit" class="btn define">Add</button>
       </div>
     </div>
     <div class="row">
       <div class="form-group col-xs-7">
-        <input type="text" name="photo" class="form-control">
+        <input type="text" name="photo" class="form-control" placeholder="Add Photo">
       </div>
       <div class="col-xs-5">
-        <button type="submit" class="btn photo">Add Photo</button>
+        <button type="submit" class="btn photo">Add</button>
       </div>
     </div>
   </form>
