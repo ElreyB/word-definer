@@ -85,12 +85,14 @@ a {
   margin-top: 17px;
 }
 
-.instructions-container {
+.instructions-container, .dictionary-container {
   max-height: 400px;
   max-width: 500px;
 }
 
-.list_container, .instructions-container {
+
+
+.list_container, .instructions-container, .dictionary-container{
   overflow: auto;
   font-size: 20px;
 }
