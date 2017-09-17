@@ -90,7 +90,7 @@ describe 'Word' do
     end
 
     it 'will return true when photo name is added' do
-      expect(new_word.add_photo("transpire.jpg")).to eq true
+      expect(new_word.add_photo("https://vignette4.wikia.nocookie.net/phobia/images/a/aa/Snow.jpg")).to eq true
     end
 
     it 'will return false when photo name is not added' do

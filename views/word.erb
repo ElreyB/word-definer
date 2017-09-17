@@ -1,4 +1,9 @@
-<body class="">
+<% if @word.photo != "" %>
+  <style>
+    body {background-image: url("<%= @word.photo %>");}
+  </style>
+<% end %>
+<body class="word">
   <a href="/"><button class="btn">Home</button></a>
   <h3><%= @word.word %></h3>
     <ol>
@@ -15,9 +20,21 @@
   </div>
   <br>
   <form action="/word/<%= @word.word %>" method="post">
-    <div class="form-group">
-      <input type="text" name="definition" class="form-control">
+    <div class="row">
+      <div class="form-group col-xs-7">
+        <input type="text" name="definition" class="form-control">
+      </div>
+      <div class="col-xs-3">
+        <button type="submit" class="btn define">Add Definition</button>
+      </div>
     </div>
-    <button type="submit" class="btn define">Add Definition</button>
+    <div class="row">
+      <div class="form-group col-xs-7">
+        <input type="text" name="photo" class="form-control">
+      </div>
+      <div class="col-xs-3">
+        <button type="submit" class="btn photo">Add Photo</button>
+      </div>
+    </div>
   </form>
 </body>

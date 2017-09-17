@@ -48,8 +48,8 @@ class Word
   end
 
   def add_photo(photo_name)
-    if photo_name =~ /^[a-z0-9\W][^\s]*.jpg/i
-      @photo += photo_name
+    if photo_name =~ /^[a-z0-9\W][^\s]*.jpe?g$/i
+      @photo = photo_name
       return true
     else
       return false
