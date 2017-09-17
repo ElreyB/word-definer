@@ -40,13 +40,21 @@ h4 {
   font-size: 27px;
 }
 
+.scroll {
+  text-align: center;
+}
+
+.scroll h5 {
+  font-size: 27px;
+}
+
 a {
   color: white;
 }
 
 .list_container {
   max-height: 100px;
-  max-width: 148px;
+  max-width: 178px;
   overflow: auto;
 }
 
