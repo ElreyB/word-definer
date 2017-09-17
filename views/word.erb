@@ -5,13 +5,10 @@
 <% end %>
 <body>
   <div class="row">
-    <div class="col-xs-3 col-offset-1">
+    <div class="col-xs-5 col-offset-1">
       <a href="/"><button class="btn">Home</button></a>
     </div>
-    <div class="col-xs-4">
-      <button class="btn instruction-word">Instruction</button>
-    </div>
-    <div class="col-xs-4">
+    <div class="col-xs-6">
       <form class="" action="/photo/delete/<%= @word.word %>" method="post">
         <button type="submit" class="btn">Remove Photo</button>
       </form>

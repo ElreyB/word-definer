@@ -70,3 +70,7 @@ get('/alphabetize') do
   @words = Word.all.sort
   erb(:alphabetize)
 end
+
+get('/instructions') do
+  erb(:instructions)
+end
