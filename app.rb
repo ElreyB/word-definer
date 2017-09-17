@@ -9,7 +9,7 @@ get('/') do
   start_word1 = Word.new("apple")
   start_word1.add_definition("a fruit")
   start_word1.save
-  
+
   @words = Word.all
   erb(:home)
 end
@@ -36,6 +36,14 @@ get('/word/:word') do
   erb(:word)
 end
 
+post('/search') do
+  search_word = params['search']
+  if Word.all.has_key?(search_word)
+    @word = Word.find(search_word)
+    erb(:word)
+  end
+end
+
 post('/photo/delete/:word') do
   @word = Word.find(params[:word])
   @word.delete_photo
@@ -51,8 +59,6 @@ post('/word/:word') do
   @word.save
   erb(:word)
 end
-
-
 
 get('/all') do
   @words = Word.all
