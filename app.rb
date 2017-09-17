@@ -23,8 +23,10 @@ end
 
 post("/") do
   word = params['add_word']
-  new_word = Word.new(word)
-  new_word.save
+  if !word.empty?
+    new_word = Word.new(word)
+    new_word.save
+  end
   @words = Word.all
   erb(:home)
 end
