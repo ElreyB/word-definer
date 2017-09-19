@@ -1,16 +1,30 @@
+
 <body class="alphabetize">
-  <a href="/"><button class="btn">Home</button></a>
+  <a href="/instructions"><button class="btn instruction-home btn-block">Instruction</button></a>
   <h1>Your Dictionary</h1>
-  <ul>
-    <% @words.each do |word, define| %>
-      <li><h3><%= word %></h3></li>
-      <ol>
-        <% define.definition.each do |definition| %>
-          <% if definition != ""%>
-            <li><%= definition %></li>
+  <div class="dictionary-container">
+    <ul>
+      <% @words.each do |word, define| %>
+        <li><h3><%= word %></h3></li>
+        <ol>
+          <% define.definition.each do |definition| %>
+            <% if definition != ""%>
+              <li><%= definition %></li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ol>
-    <% end %>
-  </ul>
+        </ol>
+      <% end %>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">
+      <a href="/"><button class="btn">Home</button></a>
+    </div>
+    <div class="col-xs-4">
+      <button class="btn search">Search Dictionary</button>
+    </div>
+    <div class="col-xs-5">
+      <a href="/all"><button class="btn">Words and Definitions</button></a>
+    </div>
+  </div>
 </body>

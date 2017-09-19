@@ -1,27 +1,48 @@
-<h2>Words currently in your dictionary:</h2>
-<ul>
-  <% @words.each do |word, definition| %>
-  <% if word != "" %>
-    <li><a href="/word/<%= word %>"><%= word %></a></li>
-  <% end %>
-  <% end %>
-</ul>
-<a href="/all"><button class="btn">View all words and definition</button></a>
-<a href="/alphabetize"><button class="btn">View all words and definition alphabetized</button></a>
 
+<a href="/instructions"><button class="btn instruction-home btn-block">Instruction</button></a>
 
+<h3 class="current_header">Words currently in your dictionary</h3>
+<div class="list_container">
+  <ul>
+    <% @words.each do |word, definition| %>
+      <li><a href="/word/<%= word %>"><%= word %></a></li>
+    <% end %>
+  </ul>
+</div>
 
-<h2>Add word to dictionary</h2>
+<br>
+<div class="hide error">
+  <h4>Input Error</h4>
+</div>
+
 <form action="/" method="post">
-  <div class="form-group">
-    <input type="text" name="add_word">
+  <div class="row">
+    <div class="form-group col-xs-7">
+      <input type="text" name="add_word" class="form-control" placeholder="Add word to dictionary">
+    </div>
+    <div class="col-xs-5">
+      <button type="submit" class="btn add">Add</button>
+    </div>
   </div>
-  <button type="submit" class="btn">Add to List</button>
 </form>
-<h2>Delete word to dictionary</h2>
-<form action="/" method="post">
-  <div class="form-group">
-    <input type="text" name="delete_word">
+<form action="/delete" method="post">
+  <div class="row">
+    <div class="form-group col-xs-7">
+      <input type="text" name="delete_word" class="form-control" placeholder="Delete word from dictionary">
+    </div>
+    <div class="col-xs-5">
+      <button type="submit" class="btn delete">Delete</button>
+    </div>
   </div>
-  <button type="submit" class="btn">Delete from List</button>
 </form>
+<div class="row">
+  <div class="col-xs-5">
+    <a href="/all"><button class="btn">Words and Definitions</button></a>
+  </div>
+  <div class="col-xs-4">
+    <button class="btn search">Search Dictionary</button>
+  </div>
+  <div class="col-xs-3">
+    <a href="/alphabetize"><button class="btn">Alphabetize</button></a>
+  </div>
+</div>

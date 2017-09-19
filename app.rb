@@ -4,44 +4,29 @@ also_reload 'lib/**/*.rb'
 require './lib/word'
 require 'pry'
 
+
 get('/') do
   start_word1 = Word.new("apple")
   start_word1.add_definition("a fruit")
   start_word1.save
 
-  start_word2 = Word.new("play")
-  start_word2.add_definition("to enjoy one time with an activity")
-  start_word2.save
-
-  start_word3 = Word.new("snow")
-  start_word3.add_definition("water in a solid form")
-  start_word3.save
   @words = Word.all
   erb(:home)
 end
 
 post("/") do
-  word = params['add_word'] 
-  new_word = Word.new(word)
-  new_word.save
-  @words = Word.all
-  if @words.has_key?(nil)
-    @words.delete(nil)
-    @words
+  word = params['add_word']
+  if !word.empty?
+    new_word = Word.new(word)
+    new_word.save
   end
-  erb(:home)
-end
-
-post("/") do
-  word = params['delete_word']
-  @words.delete(word)
   @words = Word.all
   erb(:home)
 end
 
-post("/") do
-  @words = Word.all
+post("/delete") do
   word = params['delete_word']
+  @words = Word.all
   @words.delete(word)
   erb(:home)
 end
@@ -51,10 +36,30 @@ get('/word/:word') do
   erb(:word)
 end
 
+post('/search') do
+  search_word = params['search']
+  if Word.all.has_key?(search_word)
+    @word = Word.find(search_word)
+    erb(:word)
+  else
+    @words = Word.all
+    erb(:home)
+  end
+end
+
+post('/photo/delete/:word') do
+  @word = Word.find(params[:word])
+  @word.delete_photo
+  erb(:word)
+end
+
 post('/word/:word') do
   @word = Word.find(params[:word])
   definition = params['definition']
+  photo = params['photo']
   @word.add_definition(definition)
+  @word.add_photo(photo)
+  @word.save
   erb(:word)
 end
 
@@ -66,4 +71,8 @@ end
 get('/alphabetize') do
   @words = Word.all.sort
   erb(:alphabetize)
+end
+
+get('/instructions') do
+  erb(:instructions)
 end

@@ -1,17 +1,52 @@
-<a href="/"><button class="btn">Home</button></a>
-<h3><%= @word.word %></h3>
-  <ol>
-    <% @word.definition.each do |definition| %>
-      <% if definition != ""%>
-        <li><%= definition %></li>
-      <% end %>
-    <% end %>
-  </ol>
+<% if @word.photo != "" %>
+  <style>
+    body {background-image: url("<%= @word.photo %>");}
+  </style>
+<% end %>
+<body>
+  <a href="/instructions"><button class="btn instruction-home btn-block">Instruction</button></a>
+  <br>
 
-<h2>Add a definition to word:</h2>
-<form action="/word/<%= @word.word %>" method="post">
-  <div class="form-group">
-    <input type="text" name="definition">
+  <h2 class="word-header"><%= @word.word %></h2>
+    <ol>
+      <% @word.definition.each do |definition| %>
+        <% if definition != ""%>
+          <li><%= definition %></li>
+        <% end %>
+      <% end %>
+    </ol>
+
+  <h3>Add a definition to word:</h3>
+  <div class="hide error">
+    <h4>Input Error</h4>
   </div>
-  <button type="submit" class="btn">Add Definition</button>
-</form>
+  <br>
+  <form action="/word/<%= @word.word %>" method="post">
+    <div class="row">
+      <div class="form-group col-xs-7">
+        <input type="text" name="definition" class="form-control" placeholder="Add Definition">
+      </div>
+      <div class="col-xs-5">
+        <button type="submit" class="btn define">✏️</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xs-7">
+        <input type="text" name="photo" class="form-control" placeholder="Add Photo">
+      </div>
+      <div class="col-xs-5">
+        <button type="submit" class="btn photo">📷</button>
+      </div>
+    </div>
+  </form>
+  <div class="row">
+    <div class="col-xs-5 col-offset-1">
+      <a href="/"><button class="btn">Home</button></a>
+    </div>
+    <div class="col-xs-6">
+      <form class="" action="/photo/delete/<%= @word.word %>" method="post">
+        <button type="submit" class="btn">Remove Photo</button>
+      </form>
+    </div>
+  </div>
+</body>

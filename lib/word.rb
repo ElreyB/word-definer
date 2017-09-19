@@ -1,14 +1,21 @@
 class Word
   @@dictionary = {}
-  attr_reader :word, :definition
+  attr_reader :word, :definition, :photo
 
   def initialize(word)
-    @word = word
+    @word = word.downcase
     @definition = []
+    @photo = ""
   end
 
   def add_definition(definition)
-    @definition.push(definition)
+    if definition =~ /^[a-z\s]*$/i
+      @definition.push(definition)
+      return true
+    else
+      return false
+    end
+
   end
 
   def self.all
@@ -16,7 +23,12 @@ class Word
   end
 
   def save
-    @@dictionary[self.word] = self
+    if self.class == Word && self.word =~ /^[a-z]*$/i
+      @@dictionary[self.word] = self
+      return true
+    else
+      return false
+    end
   end
 
   def self.clear
@@ -33,5 +45,18 @@ class Word
 
   def self.delete(word)
     @@dictionary.delete(word)
+  end
+
+  def add_photo(photo_name)
+    if photo_name =~ /^[a-z0-9\W][^\s]*.jpe?g$/i
+      @photo = photo_name
+      return true
+    else
+      return false
+    end
+  end
+
+  def delete_photo
+    @photo = ""
   end
 end

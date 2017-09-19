@@ -1,4 +1,19 @@
+body.instructions video#bgvid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  /*background: url(../img/) no-repeat;*/
+  background-size: cover;
+}
+
 body {
+  color: white;
   background-image: url(../images/dictionary.jpg);
 }
 
@@ -10,8 +25,14 @@ body.all {
   background-image: url(../images/words.jpg);
 }
 
+body, body.alphabetize, body.all {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
-.container {
+body {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,8 +41,66 @@ body.all {
 }
 
 .well {
+  background-color: rgba(14, 14, 14, 0.88);
+}
+
+.main_container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+h4 {
+  color : #980000;
+  text-align: center;
+  font-size: 27px;
+}
+
+.scroll, .word-header, .current_header{
+  text-align: center;
+}
+
+.scroll p, {
+  font-size: 16px;
+}
+
+.word-header{
+  font-size: 60px
+}
+
+a {
+  color: white;
+}
+
+.list_container {
+  max-height: 100px;
+  max-width: 178px;
+  margin: auto;
+  /*overflow: auto;*/
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.instruction-home {
+  font-size: 20px;
+}
+
+.page-header {
+  margin-top: 17px;
+}
+
+.instructions-container, .dictionary-container {
+  max-height: 400px;
+  max-width: 500px;
+}
+
+
+
+.list_container, .instructions-container, .dictionary-container{
+  overflow: auto;
+  font-size: 20px;
 }
